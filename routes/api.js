@@ -1,5 +1,5 @@
-const router = router("express").Router()
-const Workout = require("../models/workout")
+const router = router("express").Router();
+const Workout = require("../models/workout");
 
 router.get("/api/workouts", (req, res) => {
   Workout.find()
@@ -8,8 +8,8 @@ router.get("/api/workouts", (req, res) => {
     })
     .catch(err => {
       res.json(err)
-    })
-})
+    });
+});
 
 router.post("/api/workouts", (req, res) => {
   Workout.create(req.body)
@@ -18,8 +18,8 @@ router.post("/api/workouts", (req, res) => {
     })
     .catch(err => {
       res.json(err)
-    })
-})
+    });
+});
 
 router.put("/api/workouts/:id", ({ body, params }) => {
   Workout.findByIdAndUpdate(params.id,
@@ -31,5 +31,30 @@ router.put("/api/workouts/:id", ({ body, params }) => {
     })
     .catch(err => {
       res.json(err)
-    })
-})
+    });
+});
+
+app.delete("/delete/:id", (req, res) => {
+  db.Workout.remove(
+    {
+      _id: mongojs.ObjectID(req.params.id)
+    },
+    (error, data) => {
+      if (error) {
+        res.send(error);
+      } else {
+        res.send(data);
+      }
+    }
+  );
+});
+
+app.delete("/clearall", (req, res) => {
+  db.Workout.remove({}, (error, response) => {
+    if (error) {
+      res.send(error);
+    } else {
+      res.send(response);
+    }
+  });
+});
