@@ -24,3 +24,7 @@ mongoose.connect("mongodb://localhost/workout", {
 app.listen(PORT, () => {
   console.log(`App running on port ${PORT}!`);
 });
+
+app.get("/", function (req, res) {
+  res.json(path.join(__dirname, "public/index.html"));
+});
