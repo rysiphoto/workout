@@ -1,4 +1,4 @@
-const router = router("express").Router();
+const router = require("express").Router();
 const Workout = require("../models/workout");
 
 router.get("/api/workouts", (req, res) => {
@@ -21,20 +21,20 @@ router.post("/api/workouts", (req, res) => {
     });
 });
 
-router.put("/api/workouts/:id", ({ body, params }) => {
-  Workout.findByIdAndUpdate(params.id,
+router.put("/api/workouts/:id", ({ body, params }, res) => {
+  Workout.findByIdAndUpdate(
+    params.id,
     { $push: { exercises: body } },
-    { new: true, runValidators: true }
-  )
+    { new: true, runValidators: true })
     .then(data => {
-      res.json(data)
+      res.json(data);
     })
     .catch(err => {
-      res.json(err)
+      res.json(err);
     });
 });
 
-app.delete("/delete/:id", (req, res) => {
+router.delete("/delete/:id", (req, res) => {
   db.Workout.remove(
     {
       _id: mongojs.ObjectID(req.params.id)
@@ -49,7 +49,7 @@ app.delete("/delete/:id", (req, res) => {
   );
 });
 
-app.delete("/clearall", (req, res) => {
+router.delete("/api/workouts", (req, res) => {
   db.Workout.remove({}, (error, response) => {
     if (error) {
       res.send(error);
@@ -58,3 +58,5 @@ app.delete("/clearall", (req, res) => {
     }
   });
 });
+
+module.exports = router;
