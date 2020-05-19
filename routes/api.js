@@ -34,6 +34,17 @@ router.put("/api/workouts/:id", ({ body, params }, res) => {
     });
 });
 
+router.get("/api/workouts/range", (req, res) => {
+  Workout.find({}).limit(7)
+    .then(data => {
+      console.log(data)
+      res.json(data);
+    })
+    .catch(err => {
+      res.json(err);
+    });
+});
+
 router.delete("/delete/:id", (req, res) => {
   db.Workout.remove(
     {
