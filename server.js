@@ -18,15 +18,6 @@ app.use(express.static("public"));
 
 mongoose.connect(MONGODB_URI);
 
-// mongoose.connect("mongodb://localhost/workout", {
-//   useNewUrlParser: true,
-//   useFindAndModify: false
-// });
-
 app.listen(PORT, () => {
   console.log(`App running on port ${PORT}!`);
-});
-
-app.get("/", function (req, res) {
-  res.json(path.join(__dirname, "public/index.html"));
 });
