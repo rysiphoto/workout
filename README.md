@@ -1,51 +1,44 @@
-# Unit 17 Nosql Homework: Workout Tracker
+## Table of Contents
+##### 1. [Project Description](#Project-Description)
+##### 2. [GitHub Address](#GitHub-Address)
+##### 3. [License Type](#License-Type)
+##### 4. [Dependencies](#Dependencies)
+##### 5. [Test Run Commands](#Test-Run-Commands)
+##### 6. [Author Contact Information](#Author-Contact-Information)
+---
+# **Workout Tracker**
 
-For this assignment, you'll create a workout tracker. You have already been provided with the front end code in the `Develop` folder. This assignment will require you to create Mongo database with a Mongoose schema and handle routes with Express.
+### **Project Description:**
+##### This app tracks workout reps, weights, duration and type of exercise can be entered. All data interacts with a Heroku Mongodb database.
+---
+### **GitHub Address:**
+[Workout Tracker](https://github.com/rysiphoto/workout)
+---
+### **License Type:**
+##### MIT
+![MIT License](https://img.shields.io/badge/license-MIT-green)
+---
+### **Dependencies**
+##### npm i
+---
+### **Test Run Commands**
+##### node server
+---
+### **Image**
+<img src="workout1.png">
+<img src="workout2.png">
+<img src="workout3.png">
 
-## User Story
 
-* As a user, I want to be able to view create and track daily workouts. I want to be able to log multiple exercises in a workout on a given day. I should also be able to track the name, type, weight, sets, reps, and duration of exercise. If the exercise is a cardio exercise, I should be able to track my distance traveled.
+##### 
+---
+### **Author Contact Information:**
+![MyFace](https://avatars3.githubusercontent.com/u/61304775?s=150&u=d99beab884a1c29674dba64712a08086272d692b&v=4)
+* Ryan Siverson
+* rcsskier@mac.com
+* [GitHub](https://github.com/rysiphoto)
+* [LinkedIn](https://www.linkedin.com/in/ryan-siverson-695b5a32/)
 
-## Business Context
-
-A consumer will reach their fitness goals quicker when they track their workout progress.
-
-## Acceptance Criteria
-
-When the user loads the page, they should be given the option to create a new workout, or continue with their last workout.
-
-The user should be able to:
-
-  * Add exercises to a previous workout plan.
-
-  * Add new exercises to a new workout plan.
-
-  * View multiple the combined weight of multiple exercises on the `stats` page.
-
-## Commit Early and Often
-
-One of the most important skills to master as a web developer is version control. Building the habit of committing via Git is important for two reasons:
-
-1. Your commit history is a signal to employers that you are actively working on projects and learning new skills
-
-2. Your commit history allows you to revert your code base in the event that you need to return to a previous state
-
-Follow these guidelines for committing:
-
-* Make single purpose commits for related changes to ensure a clean, manageable history. If you are fixing two issues, make two commits
-
-* Write descriptive, meaningful commit messages so that you and anyone else looking at your repository can easily understand its history
-
-* Don't commit half done work, for the sake of your collaborators (and your future self!)
-
-* Test your application before you commit to ensure functionality at every step in the development process
-
-We would like you to have well over 200 commits by graduation, so commit early and often!
-
-## Submission on BCS
-
-You are required to submit the following:
-
-* The URL to the deployed application
-
-* The URL to the Github repository
+---
+---
+###### © Ryan Siverson 2020
